@@ -1,11 +1,11 @@
 import './Message.scss';
 
-export const Message = (props)=>{
+export const Message = ({message})=>{
  return (
    <div>
      <header className="msghead">
          React App
-       <h3>{props.message}</h3>
+       <h3>{message}</h3>
      </header>
      </div>
  );
