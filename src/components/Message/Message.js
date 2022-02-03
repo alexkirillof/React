@@ -1,13 +1,14 @@
-import './Message.scss';
-
-export const Message = ({message})=>{
- return (
-   <div>
-     <header className="msghead">
-         React App
-       <h3>{message}</h3>
-     </header>
-     </div>
- );
+import React from "react";
+import "./Message.scss";
+export class Message extends React.Component {
+  render() {
+    const { text,author } = this.props;
+    return (
+      <h4 className="msghead">
+        {author + ":"+" "} {text}
+      </h4>
+    );
+  }
 }
+
 
