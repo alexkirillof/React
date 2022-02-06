@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState,useRef,useEffect } from "react";
 import TextField from "@mui/material/TextField/TextField";
 import Button from "@mui/material/Button/Button";
 
 import "./FormMui.scss";
 
 export const FormMui = ({ onSubmit }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
+  const textField = useRef();
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -17,10 +18,18 @@ export const FormMui = ({ onSubmit }) => {
     setValue("");
   };
 
+  useEffect(() => {
+    textField.current?.focus();
+  }, []);
+
   return (
     <form onSubmit={handleSubmit}>
-      <TextField value={value} onChange={handleChange} />
-      <Button className="MuiButton-root" variant="contained">Send</Button>
+      <TextField className="myTxtField" 
+                 value={value} 
+                 onChange = {handleChange} 
+                 inputRef={textField}
+      />
+      <Button type="submit" className="MuiButton-root" variant="contained">Send</Button>
     </form>
   );
 };

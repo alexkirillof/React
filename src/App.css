@@ -2,6 +2,16 @@
     text-align: center;
 }
 
+.App-header {
+    display: flex;
+    justify-content: center;
+    background-color: #05282b;
+}
+
+.App-header ul {
+    color: bisque
+}
+
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -13,8 +23,7 @@
     }
 }
 
-.App-header {
-    background-color: #05282b;
+.App-wrapper {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -22,6 +31,12 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+    width: 50%;
+}
+
+.App-content {
+    max-height: 400px;
+    overflow: scroll;
 }
 
 .App-link {
