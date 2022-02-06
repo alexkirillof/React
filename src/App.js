@@ -2,27 +2,29 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { Message } from "./components/Message/Message.js";
 import { Form } from "./components/Form/Form";
+import { FormMui } from "./components/FormMui/FormMui.js";
 
 
 function App() {
   const [messageList, setMessageList] = useState([]);
 
-  const handleMessage = (text) =>{
-    const MyMsg = {
+  const sendMessage = (text, author) => {
+    const newMsg = {
       text,
-      author: "Me"
-    }
-    setMessageList((prevMessageList)=>[...prevMessageList,MyMsg])
-  }
+      author,
+      id: `msg-${Date.now()}`,
+    };
+    setMessageList((prevMessageList) => [...prevMessageList, newMsg]);
+  };
 
+  const handleMessage = (text) =>{
+    sendMessage(text,"Me")
+  }
+      
 useEffect(() => {
   if(messageList[messageList.length-1]?.author === "Me") {
     setTimeout(()=>{
-        const MyMsg = {
-          text:"Hi, it`s just a robot",
-          author: "Robot"
-        }
-      setMessageList((prevMessageList)=>[...prevMessageList,MyMsg])
+      sendMessage("Hi, it`s just a robot","Robot")
       },1000)
     }
   }
@@ -34,9 +36,10 @@ useEffect(() => {
       <header className="App-header">
        {messageList.map((message)=>(
        <Message text={message.text}
-                author={message.author}
+                author={message.authar}
+                key={message.id}
        />))}
-        <Form onSubmit={handleMessage} name="Send"></Form>
+        <FormMui onSubmit={handleMessage}></FormMui>
       </header>
     </div>
   );
