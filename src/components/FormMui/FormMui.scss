@@ -5,7 +5,7 @@ $txt-color:rgb(31, 88, 88);
 }
 
 .myTxtField .MuiOutlinedInput-root {
-    background: rgb(88, 17, 17) !important
+    background: $msg-background-color !important
 }
 
 .form {

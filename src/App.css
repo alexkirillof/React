@@ -5,11 +5,7 @@
 .App-header {
     display: flex;
     justify-content: center;
-    background-color: #05282b;
-}
-
-.App-header ul {
-    color: bisque
+    background-color: #398086;
 }
 
 .App-logo {
