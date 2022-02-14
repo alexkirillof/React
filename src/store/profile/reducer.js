@@ -1,21 +1,25 @@
-import CHANGE_SHOW_NAME from "./actions"
+import { TOGGLE_SHOW_NAME, SET_NAME } from "./actions.js"
 
-const initialState ={
-    name:"Default",
-    showName: false
- }
-
- export const profileReduser = (state=initialState,action)=>{
-   switch(action.type){
-       case CHANGE_SHOW_NAME:{
+const initialState = {
+    showName: false,
+    name: 'Default'
+  }
+  
+export const profileReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case TOGGLE_SHOW_NAME:
         return {
-             ...state,
-             showName: !state.showName
-         }
-     }
-     default: 
-     return state;
-   }
- }
+            ...state,
+            showName: !state.showName
+        }
+        case SET_NAME:
+        return {
+            ...state,
+            name: action.name
+        }
+        default:
+            return state
+    }
+}
 
  
