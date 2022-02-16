@@ -1,11 +1,5 @@
-import {Message} from './components/Message/Message.js';
+import { Router } from "./components/Router";
 
-function App(props) {
- return (
-   <div className="App">
-  <Message message="Hy, its my first app!"></Message>
-   </div>
- );
-}
+const App = () => <Router />;
 
 export default App;

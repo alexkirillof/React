@@ -1,11 +1,15 @@
-$msg-background-color: rgb(137, 204, 195);
-.msghead {
-    background-color: $msg-background-color;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: rgb(9, 36, 44);
-}
+    $msg-background-color: rgb(137, 204, 195);
+    $txt-color:rgb(31, 88, 88);
+    .msghead {
+        background-color: $msg-background-color;
+        min-height: 7vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        color: $txt-color;
+        padding: 5px;
+        border: 2px solid rgb(31, 88, 88);
+        border-radius: 6px;
+    }
