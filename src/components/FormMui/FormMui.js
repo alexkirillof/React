@@ -33,3 +33,5 @@ export const FormMui = ({ onSubmit }) => {
     </form>
   );
 };
+
+export default FormMui;

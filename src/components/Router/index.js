@@ -1,36 +1,29 @@
-import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
-import Button from '@mui/material/Button/Button';
-// import App from "../../App";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import { Chat } from "../Chat";
 import { ChatList } from "../ChatList";
-import {Profile} from "../Profile/index";
+import Profile from "../Profile/index.js";
 import "./Router.scss";
 
 const Home = ()=><h2>Home page</h2>
 
-
 export const Router =()=>{
     return(
-        <div className="App">
-        <div className='App__body'>
+       
         <BrowserRouter>
-        <div className='App__wrapper'>
-          <ul className='Nav'>
-            <li>
-              <NavLink to="/" className='Nav__link'>
-                <Button className='Nav__btn' size='large'>Home</Button>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/profile" className='Nav__link'>
-                <Button className='Nav__btn' size='large'>My profile</Button>
-              </NavLink>
-            </li>
-          </ul>
-          </div>
-          <div className='App__wrapper'>
+        <div className='App_wrapper'>
+             <div className="Navigate">
+                <NavLink to="/" className="link">
+                Home 
+                </NavLink>
+                <NavLink to="/chats"  className="link">
+                    Chats
+                </NavLink>
+                <NavLink to="/profile"  className="link" >
+                    Profile
+                </NavLink>
+             </div>
           <Routes>
-            <Route path="/" element={<ChatList />} />
+          <Route path="" element={<Home/>} />
             <Route path="chats" element={<ChatList />}>
               <Route path=":chatId" element={<Chat />} />
             </Route>
@@ -39,7 +32,9 @@ export const Router =()=>{
           </Routes>
           </div>
       </BrowserRouter>
-        </div>
-    </div>
+ 
     )
-}
+};
+
+export default Router;
+

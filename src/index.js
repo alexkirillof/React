@@ -9,7 +9,7 @@ import { Router } from "./components/Router/index.js";
 
 ReactDOM.render(
     <React.StrictMode>
-      <Provider store={store}><App /></Provider>
+      <Provider store={store}><Router /></Provider>
     </React.StrictMode>,
     document.getElementById('root')
   );
