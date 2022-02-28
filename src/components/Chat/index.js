@@ -1,19 +1,22 @@
 
-import { useState, useEffect,useRef } from "react";
+import {useEffect,useRef } from "react";
 import "../../App.css";
 import { MessageList } from "../MessageList/index.js";
 import {FormMui} from "../FormMui/FormMui.js";
 import { Navigate,  useParams } from "react-router";
+import { useSelector, useDispatch } from 'react-redux';
+import {selectMessages}  from "../../store/messages/selectors.js";
+import {addMessage} from "../../store/messages/actions.js"
 
 
-export function Chat({messages,addMessage}) {
+export function Chat() {
   const params = useParams();
   const { chatId } = params;
-  // const [messageList, setMessageList] = useState({
-  //   chat1: [],
-  //   chat2: [],
-  //   chat3: [],
-  // });
+
+
+  const messages = useSelector(selectMessages);
+  const dispatch = useDispatch();
+
   const messagesEnd = useRef();
 
   const handleMessage = (text) =>{
@@ -26,7 +29,7 @@ export function Chat({messages,addMessage}) {
       athuor,
       id: `msg-${Date.now()}`,
     };
-    addMessage(chatId,newMsg)
+    dispatch(addMessage(chatId,newMsg))
   };
 
       
