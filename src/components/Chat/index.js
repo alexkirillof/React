@@ -6,13 +6,12 @@ import {FormMui} from "../FormMui/FormMui.js";
 import { Navigate,  useParams } from "react-router";
 import { useSelector, useDispatch } from 'react-redux';
 import {selectMessages}  from "../../store/messages/selectors.js";
-import {addMessage} from "../../store/messages/actions.js"
+import {addMessageWithThunk} from "../../store/messages/actions.js"
 
 
 export function Chat() {
   const params = useParams();
   const { chatId } = params;
-
 
   const messages = useSelector(selectMessages);
   const dispatch = useDispatch();
@@ -29,24 +28,13 @@ export function Chat() {
       athuor,
       id: `msg-${Date.now()}`,
     };
-    dispatch(addMessage(chatId,newMsg))
+    dispatch(addMessageWithThunk(chatId,newMsg))
   };
 
       
   useEffect(() => {
     messagesEnd.current?.scrollIntoView();
-
-    let timeout;
-    if (
-      messages[chatId]?.[messages[chatId]?.length - 1]?.athuor === 'me'
-    ) {
-      timeout = setTimeout(() => {
-        sendMessage("Hi, it`s just a robot","Robot", "Robot");
-      }, 1000);
-    }
-    return () => clearTimeout(timeout);
   }, [messages]);
-
 
 
   if (!messages[chatId]) {
