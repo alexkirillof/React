@@ -1,4 +1,4 @@
-const apiUrl = "https://www.anapioficeandfire.com/api/bookss?pageSize=30";
+const apiUrl = "https://www.anapioficeandfire.com/api/books?pageSize=30";
 export const GET_BOOKS_REQUEST = "BOOKS::GET_BOOKS_REQUEST";
 export const GET_BOOKS_SUCCESS = "BOOKS::GET_BOOKS_SUCCESS";
 export const GET_BOOKS_FAILURE = "BOOKS::GET_BOOKS_FAILURE";
