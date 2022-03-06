@@ -28,11 +28,10 @@ export const Router =()=>{
                 </NavLink>
              </div>
           <Routes>
-          <Route path="" element={<Home/>} />
-          <Route path="/books" element={<Books/>} />
-          <Route path="chats"></Route>
+            <Route path="" element={<Home/>} />
+            <Route path="/books" element={<Books/>} />  
             <Route path="chats" element={<ChatList/>}>
-              <Route path=":chatId" element={<Chat/>} />
+               <Route path=":chatId" element={<Chat/>} />
             </Route>
             <Route path="/profile" element={<Profile />}></Route>
             <Route element={<h2>404</h2>} />
