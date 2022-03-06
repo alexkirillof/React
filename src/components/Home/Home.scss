@@ -1,0 +1,35 @@
+$msg-background-color: rgb(137, 204, 195);
+$txt-color:rgb(31, 88, 88);
+.MuiButton-root {
+    color: red !important
+}
+
+.myTxtField .MuiOutlinedInput-root {
+    background: $msg-background-color !important
+}
+
+.form {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+    justify-content: center;
+    &__input {
+        padding: 0 8px;
+        border: none;
+        border-bottom: 1px solid #6f6f6f;
+        margin: 0 15px;
+        height: 32px;
+        line-height: 32px;
+        width: 250px;
+        max-width: 100%;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+button {
+    width: 200px;
+}
