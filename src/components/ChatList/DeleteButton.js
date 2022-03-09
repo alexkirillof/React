@@ -1,14 +1,17 @@
+import { remove, set } from "@firebase/database";
 import { Button } from "@mui/material";
-import { useDispatch } from 'react-redux';
-import { deleteChat} from '../../store/chats/actions.js';
+import { getChatsRefById } from "../../services/firebase";
 
-const DeleteButton = ({ id}) => {
-    const dispatch = useDispatch();
-    const handleDeleteChat = ()=>{
-        dispatch(deleteChat(id));
-      }
 
-    return <Button onClick = { handleDeleteChat } > X </Button>
+const DeleteButton = ({id}) => {
+    
+  const handleDeleteChat = () => {
+    // dispatch(deleteChat(id));
+    // set(getChatsRefById(id), null);
+    remove(getChatsRefById(id));
+  };
+
+    return <div onClick = { handleDeleteChat } > X </div>
 };
 
 export default DeleteButton;

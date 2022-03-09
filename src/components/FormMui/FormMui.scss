@@ -1,17 +1,19 @@
 $msg-background-color: rgb(137, 204, 195);
 $txt-color:rgb(31, 88, 88);
 .MuiButton-root {
-    color: red !important
+    color: rgb(31, 88, 88)!important
 }
 
 .myTxtField .MuiOutlinedInput-root {
-    background: $msg-background-color !important
+    background: $msg-background-color !important;
+    width: 200px !important;
 }
 
 .form {
     margin: 25px 0;
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
     &__input {
         padding: 0 8px;
         border: none;
