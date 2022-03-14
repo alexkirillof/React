@@ -11,7 +11,9 @@
         "@testing-library/jest-dom": "^5.16.1",
         "@testing-library/react": "^12.1.2",
         "@testing-library/user-event": "^13.5.0",
+        "fetchmock": "^1.0.1",
         "firebase": "^9.6.8",
+        "jest-fetch-mock": "^3.0.3",
         "node-sass": "^4.10",
         "prop-types": "^15.8.1",
         "react": "^17.0.2",
@@ -30,6 +32,9 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
+    },
+    "jest": {
+        "resetMocks": false
     },
     "eslintConfig": {
         "extends": [
